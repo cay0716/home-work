@@ -1,0 +1,48 @@
+/* 여기에 스타일을 구현해 주세요 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.face-content {
+  padding: 100px;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.face-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .face {
+    display: inline-block;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    /* background-color: yellow; */
+    margin: 10px;
+
+    img {
+      display: inline-block;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+    }
+
+    .round {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      bottom: 0;
+      right: 0;
+      border-radius: 50%;
+      background-color: #dbdbdb;
+    }
+    .round.green {
+      background-color: #4cfe88;
+    }
+  }
+}
