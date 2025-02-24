@@ -7,5 +7,5 @@
 - [마크다운 문법](./src/md/markdown.md)
 - [회고](./src/md/retrospect.md)
 - [avatars.html](./src/avatars/avatars.html)
-- [avatars.css](./src/avatars/styles/avatars.html)
+- [avatars.css](./src/avatars/styles/avatars.css)
 - [avatars.md](./src/avatars/avatars.md)
