@@ -1,0 +1,16 @@
+.sr-only {
+  position: absolute;
+  /* width/height가 0이면 가상커서가 포커싱이 안 됨(스크린리더가 읽으려면 머무를 공간이 필요함) */
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  /* position:absolute랑 같이 사용해야됨
+    앞으로는 clip-path: inset(50%);로 대체 사용이 좋음
+  */
+  clip: rect(0, 0, 0, 0);
+  /* 줄바꿈에 대한 처리 | nowrap: 줄바꿈금지  */
+  white-space: nowrap;
+  border-width: 0;
+}

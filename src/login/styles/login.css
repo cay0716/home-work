@@ -1,0 +1,165 @@
+/* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+@import "../../common/best-reset.css";
+@import "../../common/a11y.css";
+@import "../../common/base.css";
+
+:root {
+  --font-color-regular: #121212;
+  --font-size-regular: 1rem;
+}
+
+.login-page {
+  color: var(--font-color-regular);
+  font-size: var(--font-size-regular);
+  margin-inline: 1.25rem;
+  margin-block-start: 4.375rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  /* ---------로고 --------------- */
+  .brand {
+    width: 14.375rem;
+    margin-block-end: 3.125rem;
+  }
+
+  /* -------------- 로그인 폼------------ */
+  .form-login {
+    width: 100%;
+
+    .input-id,
+    .input-pwd {
+      width: 100%;
+      font-size: 0.875rem;
+      block-size: 2.8125rem;
+      margin-block: 6px;
+      border: solid 1px #dadada;
+      background: #fff;
+      padding: 1.25rem;
+    }
+    .input-id:focus,
+    .input-pwd:focus {
+      border: solid 1px #03cf5d;
+      background: #e9f0fd;
+    }
+
+    [class^="error-message"] {
+      display: none;
+      color: #ff1414;
+      font-size: 0.75rem;
+    }
+
+    /* 처음에는 그냥 :invalid를 사용했었는데, 페이지가 로드됨과 동시에
+    에러 메시지가 떴었다. use-invalid로 수정하니 예상대로 작동했다.
+    
+    :invalid > 입력값이 유효하지 않으면 언제든 적용됨
+    :user-invalid > 사용자가 입력하고 나서 또는 폼 제출 후 적용됨
+    
+    */
+    input:invalid:user-invalid + .error-message-id,
+    input:invalid:user-invalid + .error-message-pwd {
+      display: block;
+    }
+
+    /* ------ 로그인 버튼------------- */
+    .button-login {
+      width: 100%;
+      height: 2.8125rem;
+      border: none;
+      color: #fff;
+      background: #03cf5d;
+      margin-block-start: 1.25rem;
+      font-size: var(--font-size-regular);
+      cursor: pointer;
+    }
+
+    /* ------ 상태유지 체크박스 & IP ------------- */
+    .login-keep-wrap {
+      position: relative;
+      display: flex;
+      font-size: var(--font-size-regular);
+      color: var(--font-color-regular);
+      margin-block-start: 0.5rem;
+
+      .keep-check {
+        position: absolute;
+        inset-inline-end: 0;
+
+        .keep-checkbox {
+          position: absolute;
+          opacity: 0;
+          width: 1px;
+          height: 1px;
+        }
+        .label-keep {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          gap: 0.3125rem;
+          cursor: pointer;
+        }
+        .label-keep::before {
+          content: "";
+          display: inline-block;
+          inline-size: 24px;
+          aspect-ratio: 1 / 1;
+          background: url("./img/unchecked.svg") no-repeat center/cover;
+        }
+        .keep-checkbox:checked ~ .label-keep::before {
+          background: url("./img/checked.svg") no-repeat center/cover;
+        }
+
+        .keep-checkbox:focus + .label-keep::before {
+          outline: 2px solid #121212;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .keep-check {
+          inset-inline-start: 0;
+        }
+      }
+
+      /* --- ip ---- */
+      .ip-check {
+        display: none;
+        flex-flow: row nowrap;
+        gap: 0.5rem;
+        position: absolute;
+        inset-inline-end: 0;
+
+        .input-ip-switch {
+          position: absolute;
+          opacity: 0;
+          width: 1px;
+          height: 1px;
+        }
+
+        .label-ip-switch::after {
+          content: "OFF";
+          font-weight: 800;
+          color: #999999;
+        }
+
+        .input-ip-switch:checked ~ .label-ip-switch::after {
+          content: "ON";
+          color: #03cf5d;
+        }
+        .input-ip-switch:focus + .label-ip-switch::after {
+          outline: 2px solid #121212;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .ip-check {
+          display: flex;
+        }
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    .form-login {
+      width: 31.25rem;
+    }
+  }
+}
