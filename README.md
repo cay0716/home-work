@@ -11,3 +11,4 @@
 - [avatars.md](./src/avatars/avatars.md)
 - [login.html](./src/login/login.html)
 - [login.css](./src/login/styles/login.css)
+- [login.md](./src/login/login.md)
