@@ -9,3 +9,5 @@
 - [avatars.html](./src/avatars/avatars.html)
 - [avatars.css](./src/avatars/styles/avatars.css)
 - [avatars.md](./src/avatars/avatars.md)
+- [login.html](./src/login/login.html)
+- [login.css](./src/login/styles/login.css)
