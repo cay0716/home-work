@@ -20,7 +20,7 @@
 ### apple
 - [apple.html](./src/apple/apple.html)
 - [apple.css](./src/apple/styles/apple.css)
-- [card-component.html](./src/apple/card-componen.html)
+- [card-component.html](./src/apple/card-component.html)
 - [card-component.css](./src/apple/styles/card-component.css)
 - [apple.md](./src/apple/apple.md)
 
