@@ -1,0 +1,115 @@
+@import "./reset.css";
+@import "./theme.css";
+@import "./base.css";
+@import url("https://cdn.jsdelivr.net/gh/fonts-archive/AppleSDGothicNeo/AppleSDGothicNeo.css");
+
+body {
+  height: 100vh;
+  font-family: "Apple SD Gothic Neo";
+}
+
+.card {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+  height: var(--size);
+  padding-block-start: var(--large-spacing);
+
+  @media (min-width: 1024px) {
+    padding-block-start: var(--extra-large-spacing);
+  }
+
+  .product {
+    font-size: var(--large-text);
+    color: var(--white);
+    font-weight: 800;
+
+    @media (min-width: 1024px) {
+      font-size: var(--extra-large-text);
+    }
+  }
+
+  .introduction {
+    font-size: var(--base-text);
+    font-weight: 300;
+    line-height: var(--line-normal);
+    color: var(--white);
+    text-align: center;
+
+    @media (min-width: 1024px) {
+      font-size: var(--medium-text);
+    }
+  }
+
+  .release {
+    font-size: var(--small-text);
+    color: var(--gray);
+    margin-block-end: var(--x-small-spacing);
+  }
+
+  .links {
+    --base-color: var(--blue-200);
+    --lighter-color: var(--blue-100);
+    --font-color: var(--white);
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: var(--base-spacing);
+
+    .more,
+    .price {
+      font-size: var(--xx-small-text);
+      padding-block: var(--x-small-spacing);
+      padding-inline: var(--small-spacing);
+      border: solid 1px var(--base-color);
+      border-radius: 2rem;
+      color: var(--base-color);
+
+      @media (min-width: 1024px) {
+        font-size: var(--x-small-text);
+      }
+    }
+    .more {
+      background: var(--base-color);
+      color: var(--font-color);
+    }
+    .more:hover {
+      background: var(--lighter-color);
+    }
+    .price:hover {
+      background: var(--base-color);
+      color: var(--font-color);
+    }
+  }
+}
+
+.card.light {
+  .product,
+  .introduction {
+    color: var(--black);
+  }
+
+  .links {
+    --base-color: var(--black);
+    --lighter-color: rgb(74, 74, 74);
+    --font-color: var(--black);
+
+    .more,
+    .price {
+      border: solid 1px var(--base-color);
+      color: var(--base-color);
+    }
+    .more {
+      background: var(--base-color);
+      color: var(--white);
+    }
+    .more:hover {
+      background: var(--lighter-color);
+    }
+    .price:hover {
+      background: var(--base-color);
+      color: var(--white);
+    }
+  }
+}
